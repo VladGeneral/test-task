@@ -4,25 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "CAR")
-public class Car {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String brand;
-    private String model;
+public class Car extends Vehicle {
+
     private Double power;
 
-    @Column(name = "year_of_issue")
-    private Short year;
-
-    @Column(name = "assessed_value")
-    private BigDecimal value;
+    public Car(Long id, String brand, String model, Double power, Short year, Map<LocalDate, BigDecimal> estimations) {
+        super(id, brand, model, year, estimations);
+        this.power = power;
+    }
 }

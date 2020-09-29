@@ -16,3 +16,4 @@ create table AIRPLANE (
   fuelCapacity INT,
   seats INT
 );
+

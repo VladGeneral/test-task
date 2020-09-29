@@ -12,12 +12,14 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonTypeName("car")
-public class CarDto implements Collateral {
+@JsonTypeName("airplane")
+public class AirplaneDto implements Collateral {
     private Long id;
     private String brand;
     private String model;
-    private Double power;
+    private String manufactured;
     private Short year;
+    private int fuelCapacity;
+    private int seats;
     private Map<LocalDate, BigDecimal> estimations;
 }
